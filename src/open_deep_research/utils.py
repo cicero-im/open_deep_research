@@ -180,8 +180,8 @@ def perplexity_search(search_queries):
         response = requests.post(
             "https://api.perplexity.ai/chat/completions",
             headers=headers,
-            json=payload
-        )
+            json=payload, 
+        timeout=60)
         response.raise_for_status()  # Raise exception for bad status codes
         
         # Parse the response
